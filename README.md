@@ -28,7 +28,7 @@ Quirk is built on React Native and therefore assumes you have [node](https://nod
 
 ```sh
 # clone the project and cd into it
-
+git clone https://github.com/Quaidoo/Quirks.git  
 # copy the sample .env (edit as required)
 cp .env.sample .env
 
@@ -48,7 +48,7 @@ Of course!
 
 **If you like the app,** go give it 5 stars! It helps more people find the app.
 
-**If you're a mental health professional,** audit [the descriptions](https://github.com/Flaque/quirk/blob/master/src/locals/en.json) of the cognitive distortions. If you have suggestions, let me know and we'll change stuff!
+**If you're a mental health professional,** audit [the descriptions](https://github.com/quaidoo/quirks/blob/master/src/locals/en.json) of the cognitive distortions. If you have suggestions, let me know and we'll change stuff!
 
 **If you can draw** and can make digital illustrations of the little blobs, let me know and I'll find a place to stick them in the app!
 
