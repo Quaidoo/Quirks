@@ -37,7 +37,8 @@ import {
   isSubscribed,
   alias,
 } from "./index";
-import { SplashScreen } from "expo";
+import * as SplashScreen from 'expo-splash-screen'
+//import { SplashScreen } from "expo-splash-screen";
 import { isLegacySubscriber } from "../payments_legacy";
 import { needsLegacyMigration, migrateLegacySubscriptions } from "./legacy";
 import {
@@ -90,7 +91,7 @@ class PaymentScreen extends React.Component<
   };
 
   async componentDidMount() {
-    SplashScreen.preventAutoHide();
+    SplashScreen.preventAutoHideAsync();
     await setupRevenutCat();
 
     // This is basically our bare-bones "login"
@@ -98,26 +99,11 @@ class PaymentScreen extends React.Component<
     userDownloaded();
 
     // Remove this line after july 2020
-    if (await needsLegacyMigration()) {
-      await migrateLegacySubscriptions();
-    }
-
-    await this.refresh();
-
+    
     // Remove after August 14th, 2019
-    if (Platform.OS === "android" && (await isLegacySubscriber())) {
-      userSawApologyNotice();
-      Alert.alert(
-        "🤦‍ We messed up. 🤦‍",
-        `Due to a bug, your subscription was canceled without your consent. If you were charged, you were refunded!
-        
-If you'd like to continue to use Quirk, you have to resubscribe. You won't be double charged.
+    
 
-If you think you're seeing this screen accidentally, click "restore purchases" to fix the issue.`
-      );
-    }
-
-    SplashScreen.hide();
+    SplashScreen.hideAsync();
   }
 
   refresh = async () => {
@@ -459,7 +445,7 @@ If you think you're seeing this screen accidentally, click "restore purchases" t
               justifyContent: "space-between",
             }}
           >
-            {this.state.loading ? (
+            {this.state.isLoading ? (
               <BallIndicator color={theme.blue} size={24} />
             ) : (
               <ActionButton
