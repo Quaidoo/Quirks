@@ -5404,10 +5404,10 @@ expect@^29.5.0:
     jest-message-util "^29.5.0"
     jest-util "^29.5.0"
 
-expo-analytics-segment@~7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/expo-analytics-segment/-/expo-analytics-segment-7.0.0.tgz#571b62b00164047e6a6129529f1ac576df1dcc96"
-  integrity sha512-efoS3Bgq/ecqnId3adxGnEMMeHDZymAKb+nagu0Whjy0RuCtOv5OZZu/gGNLT7EzoJ9mMobat62PcB2W6E9TQA==
+expo-analytics-segment@^11.2.1:
+  version "11.2.1"
+  resolved "https://registry.yarnpkg.com/expo-analytics-segment/-/expo-analytics-segment-11.2.1.tgz#6e2973bee865b2d7fa369dead5fd03e9c7d8b714"
+  integrity sha512-c0rQxWIGw8DuJCMNZTRLPxSWj94veJmRzQTzck5JY0ueoDGv7TODFhbG27qgB3rlS9yW6wRWbr1bmdhNDo+Eng==
 
 expo-app-loader-provider@~7.0.0:
   version "7.0.0"

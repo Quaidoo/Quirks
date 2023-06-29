@@ -21,7 +21,7 @@
     "deprecated-react-native-prop-types": "^4.1.0",
     "eslint-plugin-react-native-a11y": "^1.2.0",
     "expo": "^48.0.0",
-    "expo-analytics-segment": "~7.0.0",
+    "expo-analytics-segment": "^11.2.1",
     "expo-asset": "~8.9.1",
     "expo-constants": "~14.2.1",
     "expo-device": "^5.2.1",
