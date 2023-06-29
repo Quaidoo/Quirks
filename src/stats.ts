@@ -27,15 +27,13 @@
  * (Note: we don't necessarily share all financial info
  * publicly due to legal + company risk)
  */
-
 import * as Segment from "expo-analytics-segment";
 import isInDev from "./isInDev";
 import dayjs from "dayjs";
-
 export function initSegment() {
   Segment.initialize({
-    androidWriteKey: "ZivFALGI9FH1L4WiAEY3o5PDtKwvLLxB",
     iosWriteKey: "BpLkO0nXEQJUJyjQCqZk5TWawTQN83QC",
+    androidWriteKey: "ZivFALGI9FH1L4WiAEY3o5PDtKwvLLxB",
   });
   return Segment;
 }
