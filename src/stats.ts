@@ -37,8 +37,15 @@ export function initSegment() {
   });
   return Segment;
 }
-
 initSegment();
+
+/*const options = {
+  androidWriteKey: "BpLkO0nXEQJUJyjQCqZk5TWawTQN83QC",
+  iosWriteKey: 'YOUR_IOS_WRITE_KEY',
+};
+
+Segment.initialize(options);*/
+
 
 // Don't rename these; it can mess a bunch of stuff down the pipe
 export type ScreenType =

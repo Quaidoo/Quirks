@@ -53,11 +53,9 @@
         }
       ]
     },
-    
     "sentry": {
       "enabled": true
     },
-
     "isDetached": true,
     "detach": {
       "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.9.0-sdk31.0.0-250a3991-b623-4f9c-b07f-0b9ed7e8c4c9.tar.gz",
@@ -67,7 +65,11 @@
     "plugins": [
       "expo-localization",
       "sentry-expo"
-    ]
-    
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7431ae98-ce6c-46fd-8cac-a4e865039e59"
+      }
+    }
   }
 }
