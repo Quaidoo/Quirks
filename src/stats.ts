@@ -27,25 +27,20 @@
  * (Note: we don't necessarily share all financial info
  * publicly due to legal + company risk)
  */
-import * as Segment from "expo-analytics-segment";
+
+import * as ExponentSegment from "expo-analytics-segment";
 import isInDev from "./isInDev";
 import dayjs from "dayjs";
-export function initSegment() {
-  Segment.initialize({
-    iosWriteKey: "BpLkO0nXEQJUJyjQCqZk5TWawTQN83QC",
+
+export function initExponentSegment() {
+  ExponentSegment.initialize({
     androidWriteKey: "ZivFALGI9FH1L4WiAEY3o5PDtKwvLLxB",
+    iosWriteKey: "BpLkO0nXEQJUJyjQCqZk5TWawTQN83QC",
   });
-  return Segment;
+  return ExponentSegment;
 }
-initSegment();
 
-/*const options = {
-  androidWriteKey: "BpLkO0nXEQJUJyjQCqZk5TWawTQN83QC",
-  iosWriteKey: 'YOUR_IOS_WRITE_KEY',
-};
-
-Segment.initialize(options);*/
-
+initExponentSegment();
 
 // Don't rename these; it can mess a bunch of stuff down the pipe
 export type ScreenType =
@@ -69,18 +64,18 @@ export function screen(val: ScreenType) {
   if (isInDev()) {
     return;
   }
-  Segment.screen(val);
+  ExponentSegment.screen(val);
 }
 
 export function userDownloaded() {
-  Segment.track("user_downloaded_quirk");
+  ExponentSegment.track("user_downloaded_quirk");
 }
 
 export function userGrandfathered() {
   if (isInDev()) {
     return;
   }
-  Segment.track("user_grandfathered");
+  ExponentSegment.track("user_grandfathered");
 }
 
 /**
@@ -92,7 +87,7 @@ export function newuser() {
   if (isInDev()) {
     return;
   }
-  Segment.track("newuser");
+  ExponentSegment.track("newuser");
 }
 
 /**
@@ -104,7 +99,7 @@ export function endedOnboarding() {
   if (isInDev()) {
     return;
   }
-  Segment.track("ended_onboarding");
+  ExponentSegment.track("ended_onboarding");
 }
 
 /**
@@ -115,7 +110,7 @@ export function thoughtRecorded() {
   if (isInDev()) {
     return;
   }
-  Segment.track("thought_recorded");
+  ExponentSegment.track("thought_recorded");
 }
 
 /**
@@ -127,51 +122,51 @@ export function thoughtRecorded() {
  * numbers, then there's likely a bug.
  */
 export function userStartedPayment() {
-  Segment.track("user_started_payment");
+  ExponentSegment.track("user_started_payment");
 }
 
 /**
  * User Encountered Payment Error
  */
 export function userEncounteredPaymentError(err: string) {
-  Segment.trackWithProperties("user_encountered_payment_error", {
+  ExponentSegment.trackWithProperties("user_encountered_payment_error", {
     error: err,
   });
 }
 
 export function userCanceledPayment() {
-  Segment.track("user_canceled_payment");
+  ExponentSegment.track("user_canceled_payment");
 }
 
 export function userSawApologyNotice() {
-  Segment.track("user_saw_apology_notice");
+  ExponentSegment.track("user_saw_apology_notice");
 }
 
 export function userRestoredPurchase() {
-  Segment.track("user_restored_purchase");
+  ExponentSegment.track("user_restored_purchase");
 }
 
 export function userSetPincode() {
-  Segment.track("user_set_pincode");
+  ExponentSegment.track("user_set_pincode");
 }
 
 export function userSharedSuccess() {
-  Segment.track("user_shared_success");
+  ExponentSegment.track("user_shared_success");
 }
 
 export function userDidNotShareSuccess() {
-  Segment.track("user_did_not_shared_success");
+  ExponentSegment.track("user_did_not_shared_success");
 }
 
 export function userRepeatedThought() {
-  Segment.track("user_repeated_thought");
+  ExponentSegment.track("user_repeated_thought");
 }
 
 /**
  * User Subscribed
  */
 export function userSubscribed(expirationUnixTimestamp: number) {
-  Segment.trackWithProperties("user_subscribed", {
+  ExponentSegment.trackWithProperties("user_subscribed", {
     expirationDate: dayjs.unix(expirationUnixTimestamp).format(),
   });
 }
@@ -188,7 +183,7 @@ export function userSubscribed(expirationUnixTimestamp: number) {
 export function subscriptionVerified(
   method: "cache" | "online" | "grandfathered"
 ) {
-  Segment.trackWithProperties("subscription_verified", {
+  ExponentSegment.trackWithProperties("subscription_verified", {
     method,
   });
 }
@@ -197,7 +192,7 @@ export function subscriptionVerified(
  * If there's a spike in expired, there's probably a payment error.
  */
 export function subscriptionUnverified(reason: "expired" | "never-bought") {
-  Segment.trackWithProperties("subscription_unverified", {
+  ExponentSegment.trackWithProperties("subscription_unverified", {
     reason,
   });
 }
@@ -206,14 +201,14 @@ export function subscriptionUnverified(reason: "expired" | "never-bought") {
  * If there's a spike these, there's probably a payment error.
  */
 export function subscriptionGivenForFreeDueToError() {
-  Segment.track("subscription_given_for_free_due_to_error");
+  ExponentSegment.track("subscription_given_for_free_due_to_error");
 }
 
 /**
  * If this drops dramatically, there's a cache bug
  */
 export function subscriptionFoundInCache(value: string) {
-  Segment.trackWithProperties("subscription_found_in_cache", {
+  ExponentSegment.trackWithProperties("subscription_found_in_cache", {
     value,
   });
 }
@@ -230,7 +225,7 @@ export function userFilledOutFormField(
     | "alternative"
     | "followup_note"
 ) {
-  Segment.track("user_filled_out_" + value);
+  ExponentSegment.track("user_filled_out_" + value);
 }
 
 /**
@@ -240,47 +235,47 @@ export function userFilledOutFormField(
  * it could mean the description is bad.
  */
 export function userCheckedDistortion(slug: string) {
-  Segment.track("user_checked_distortion_" + slug);
+  ExponentSegment.track("user_checked_distortion_" + slug);
 }
 
 export function userClickedQuirkGuide() {
-  Segment.track("user_clicked_quirk_guide");
+  ExponentSegment.track("user_clicked_quirk_guide");
 }
 
 export function userCantOpenLink() {
-  Segment.track("user_cant_open_link");
+  ExponentSegment.track("user_cant_open_link");
 }
 
 export function userTurnedOnNotifications() {
-  Segment.track("user_turned_on_notifications");
+  ExponentSegment.track("user_turned_on_notifications");
 }
 
 export function userTurnedOffNotifications() {
-  Segment.track("user_turned_off_notifications");
+  ExponentSegment.track("user_turned_off_notifications");
 }
 
 export function userReviewed() {
-  Segment.track("user_reviewed");
+  ExponentSegment.track("user_reviewed");
 }
 
 export function userPromptedForReviewWhenSettingCode() {
-  Segment.track("user_prompted_for_review_when_setting_code");
+  ExponentSegment.track("user_prompted_for_review_when_setting_code");
 }
 
 export function userPromptedForReviewWhenRecordingPositiveThought() {
-  Segment.track("user_prompted_for_review_when_recording_positive_thought");
+  ExponentSegment.track("user_prompted_for_review_when_recording_positive_thought");
 }
 
 export function userGaveFeedback() {
-  Segment.track("user_gave_feedback");
+  ExponentSegment.track("user_gave_feedback");
 }
 
 export function userDismissedFeedback() {
-  Segment.track("user_dismissed_feedback");
+  ExponentSegment.track("user_dismissed_feedback");
 }
 
 export function userReadArticle(article: string) {
-  Segment.track("user_read_article " + article);
+  ExponentSegment.track("user_read_article " + article);
 }
 
 /**
@@ -288,78 +283,78 @@ export function userReadArticle(article: string) {
  */
 
 export function userFeltBetter() {
-  Segment.track("user_felt_better");
+  ExponentSegment.track("user_felt_better");
 }
 
 export function userFeltWorse() {
-  Segment.track("user_felt_worse");
+  ExponentSegment.track("user_felt_worse");
 }
 
 export function userFeltTheSame() {
-  Segment.track("user_felt_the_same");
+  ExponentSegment.track("user_felt_the_same");
 }
 
 export function identify(userID: string) {
-  Segment.identify(userID);
+  ExponentSegment.identify(userID);
 }
 
 export function identifyWithTraits(userID: string, traits) {
-  Segment.identifyWithTraits(userID, traits);
+  ExponentSegment.identifyWithTraits(userID, traits);
 }
 
 /**
  * Follow Ups
  */
 export function userScheduledFollowUp() {
-  Segment.track("user_scheduled_follow_up");
+  ExponentSegment.track("user_scheduled_follow_up");
 }
 
 export function userDidNotScheduleFollowUp() {
-  Segment.track("user_did_not_schedule_follow_up");
+  ExponentSegment.track("user_did_not_schedule_follow_up");
 }
 
 export function userStartedFollowUp() {
-  Segment.track("user_started_follow_up");
+  ExponentSegment.track("user_started_follow_up");
 }
 
 export function userCompletedFollowUp() {
-  Segment.track("user_completed_follow_up");
+  ExponentSegment.track("user_completed_follow_up");
 }
 
 export function userFeltBetterOnFollowUp() {
-  Segment.track("user_felt_better_on_follow_up");
+  ExponentSegment.track("user_felt_better_on_follow_up");
 }
 
 export function userFeltTheSameOnFollowUp() {
-  Segment.track("user_felt_the_same_on_follow_up");
+  ExponentSegment.track("user_felt_the_same_on_follow_up");
 }
 
 export function userFeltWorseOnFollowUp() {
-  Segment.track("user_felt_worse_on_follow_up");
+  ExponentSegment.track("user_felt_worse_on_follow_up");
 }
 
 export function userReviewedThoughtOnFollowUp() {
-  Segment.track("user_reviewed_thought_on_follow_up");
+  ExponentSegment.track("user_reviewed_thought_on_follow_up");
 }
 
 export function userRecordedNewThoughtOnFollowUp() {
-  Segment.track("user_recorded_new_thought_on_follow_up");
+  ExponentSegment.track("user_recorded_new_thought_on_follow_up");
 }
 
 export function userRequestedPincodeReset(code: string) {
-  Segment.trackWithProperties("user_requested_code", {
+  ExponentSegment.trackWithProperties("user_requested_code", {
     code,
   });
 }
 
 export function userFinishedCheckup(mood: "good" | "neutral" | "bad") {
-  Segment.trackWithProperties("user_finished_checkup", {
+  ExponentSegment.trackWithProperties("user_finished_checkup", {
     mood,
   });
 }
 
 export function userDismissedSurvey() {
-  Segment.track("user_dismissed_survey");
+  ExponentSegment.track("user_dismissed_survey");
 }
 
 /**
@@ -371,6 +366,6 @@ export function log(label: string, properties?: object) {
   if (isInDev()) {
     console.log(args);
   } else {
-    Segment.trackWithProperties("log", args);
+    ExponentSegment.trackWithProperties("log", args);
   }
 }
