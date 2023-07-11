@@ -2503,10 +2503,10 @@
     glob "^7.1.3"
     joi "^17.2.1"
 
-"@react-native-community/cli-debugger-ui@11.3.3":
-  version "11.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-11.3.3.tgz#4bdf5665926c63d73a96d21adde03a93df447215"
-  integrity sha512-iVKcwyK2iKlq/qVtSbhk5fGsrOamAx7j50QhDMrZ6NmYZq+k75k253+YTzXoxWdPPZhsdhmILuBJgf8orIYCPQ==
+"@react-native-community/cli-debugger-ui@11.3.6":
+  version "11.3.6"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-11.3.6.tgz#1eb2276450f270a938686b49881fe232a08c01c4"
+  integrity sha512-jhMOSN/iOlid9jn/A2/uf7HbC3u7+lGktpeGSLnHNw21iahFBzcpuO71ekEdlmTZ4zC/WyxBXw9j2ka33T358w==
   dependencies:
     serve-static "^1.13.1"
 
@@ -2617,13 +2617,13 @@
     serve-static "^1.13.1"
     ws "^7.5.1"
 
-"@react-native-community/cli-server-api@^11.3.3":
-  version "11.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-community/cli-server-api/-/cli-server-api-11.3.3.tgz#fe5c8b57abeadad743954ca65bf0b47c8728154d"
-  integrity sha512-3ja7WZzXMCeGTaeWLzKxAoueqLjsuo0YURcAjqf044rkY5F1Xk5yIaTN8fb66Lnl2eB3DwuatqEB4dYl34/GZw==
+"@react-native-community/cli-server-api@^11.3.6":
+  version "11.3.6"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cli-server-api/-/cli-server-api-11.3.6.tgz#3a16039518f7f3865f85f8f54b19174448bbcdbb"
+  integrity sha512-8GUKodPnURGtJ9JKg8yOHIRtWepPciI3ssXVw5jik7+dZ43yN8P5BqCoDaq8e1H1yRer27iiOfT7XVnwk8Dueg==
   dependencies:
-    "@react-native-community/cli-debugger-ui" "11.3.3"
-    "@react-native-community/cli-tools" "11.3.3"
+    "@react-native-community/cli-debugger-ui" "11.3.6"
+    "@react-native-community/cli-tools" "11.3.6"
     compression "^1.7.1"
     connect "^3.6.5"
     errorhandler "^1.5.1"
@@ -2632,10 +2632,10 @@
     serve-static "^1.13.1"
     ws "^7.5.1"
 
-"@react-native-community/cli-tools@11.3.3":
-  version "11.3.3"
-  resolved "https://registry.yarnpkg.com/@react-native-community/cli-tools/-/cli-tools-11.3.3.tgz#96fa0b5979f8d1a3feb785ce8d3566a2d31e0e88"
-  integrity sha512-rRFSOAVVwI9R9PyPMff5WqmHbgJYrzGHFH1PA+tFvuiSmWlAf51bzkZIPehTBAQON03a6d5epNsGlBKMLA/BKw==
+"@react-native-community/cli-tools@11.3.6":
+  version "11.3.6"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cli-tools/-/cli-tools-11.3.6.tgz#ec213b8409917a56e023595f148c84b9cb3ad871"
+  integrity sha512-JpmUTcDwAGiTzLsfMlIAYpCMSJ9w2Qlf7PU7mZIRyEu61UzEawyw83DkqfbzDPBuRwRnaeN44JX2CP/yTO3ThQ==
   dependencies:
     appdirsjs "^1.2.4"
     chalk "^4.1.2"
@@ -2644,7 +2644,7 @@
     node-fetch "^2.6.0"
     open "^6.2.0"
     ora "^5.4.1"
-    semver "^6.3.0"
+    semver "^7.5.2"
     shell-quote "^1.7.3"
 
 "@react-native-community/cli-tools@^10.1.1":
@@ -10820,10 +10820,10 @@ password-prompt@^1.0.4:
     ansi-escapes "^3.1.0"
     cross-spawn "^6.0.5"
 
-patch-package@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/patch-package/-/patch-package-7.0.0.tgz#5c646b6b4b4bf37e5184a6950777b21dea6bb66e"
-  integrity sha512-eYunHbnnB2ghjTNc5iL1Uo7TsGMuXk0vibX3RFcE/CdVdXzmdbMsG/4K4IgoSuIkLTI5oHrMQk4+NkFqSed0BQ==
+patch-package@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/patch-package/-/patch-package-7.0.1.tgz#ab6a20489f9d0253726fc692f60d3d4a2d3fc9cf"
+  integrity sha512-f2GYU+6fz67znVfroq0gRuE08IWbGaRGMCFVwaz+qgG6k0K7rEKG8rXL7vDBtAMBjk8z/AhaiDuWs1aGjr15Hg==
   dependencies:
     "@yarnpkg/lockfile" "^1.1.0"
     chalk "^4.1.2"
@@ -10835,7 +10835,7 @@ patch-package@^7.0.0:
     minimist "^1.2.6"
     open "^7.4.2"
     rimraf "^2.6.3"
-    semver "^5.6.0"
+    semver "^7.0.0"
     slash "^2.0.0"
     tmp "^0.0.33"
     yaml "^2.2.2"
@@ -12288,6 +12288,13 @@ semver@^6.1.0, semver@^6.1.1, semver@^6.1.2, semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
+
+semver@^7.0.0, semver@^7.5.2:
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
+  integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
+  dependencies:
+    lru-cache "^6.0.0"
 
 send@0.17.1:
   version "0.17.1"
